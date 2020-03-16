@@ -2,6 +2,7 @@ package com.example.hd1app;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
@@ -120,21 +121,23 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
      */
     public void createTestDeals() {
 
-        ElectronicsDeal electronicsDeal = new ElectronicsDeal("Apple -10%", "45HHs6hgshHG", new Date(2020,2,29),10,1, R.drawable.nike);
-        ElectronicsDeal electronicsDeal1 = new ElectronicsDeal("Samsung -5%", "45HHs6hgshHG", new Date(2020,2,29),30,5,R.drawable.nike);
-        ElectronicsDeal electronicsDeal2 = new ElectronicsDeal("Something deal", "45HHs6hgshHG", new Date(2020,2,29),50,10,R.drawable.nike);
+        ElectronicsDeal electronicsDeal = new ElectronicsDeal("Huawei -10%", "45HHs6hgshHG", new Date(2020,2,20),10,1, R.drawable.huawei);
+        ElectronicsDeal electronicsDeal1 = new ElectronicsDeal("Samsung -5%", "45HHs6hgshHG", new Date(2020,2,29),30,5,R.drawable.samsung);
+        ElectronicsDeal electronicsDeal2 = new ElectronicsDeal("Xiaomi Discount", "45HHs6hgshHG", new Date(2020,2,29),50,10,R.drawable.xiaomi);
+        ElectronicsDeal electronicsDeal3 = new ElectronicsDeal("Argos for Students", "45HHs6hgshHG", new Date(2020,2,29),50,10,R.drawable.argos);
 
         allPossibleDeals.add(electronicsDeal);
         allPossibleDeals.add(electronicsDeal1);
         allPossibleDeals.add(electronicsDeal2);
+        allPossibleDeals.add(electronicsDeal3);
 
 
         FashionDeal fashionDeal = new FashionDeal("Next -10%", "45HHs6hgshHG", new Date(2020,2,29),100,10,R.drawable.nextlogo);
         FashionDeal fashionDeal1 = new FashionDeal("Adidas -10%", "45HHs6hgshHG", new Date(2020,2,29),50,20,R.drawable.adidaslogo);
         FashionDeal fashionDeal2 = new FashionDeal("Nike -10%", "45HHs6hgshHG", new Date(2020,2,29),10,1,R.drawable.nike);
         FashionDeal fashionDeal3 = new FashionDeal("H&M -5%", "45HHs6hgshHG", new Date(2020,2,29),100,10,R.drawable.hm);
-        FashionDeal fashionDeal4 = new FashionDeal("Adidas -10%", "45HHs6hgshHG", new Date(2020,2,29),50,20,R.drawable.adidaslogo);
-        FashionDeal fashionDeal5 = new FashionDeal("Nike -10%", "45HHs6hgshHG", new Date(2020,2,29),10,1,R.drawable.nextlogo);
+        FashionDeal fashionDeal4 = new FashionDeal("JD Sports -10%", "45HHs6hgshHG", new Date(2020,2,29),50,20,R.drawable.jd);
+        FashionDeal fashionDeal5 = new FashionDeal("The North Face -10%", "45HHs6hgshHG", new Date(2020,2,29),10,1,R.drawable.north);
 
         allPossibleDeals.add(fashionDeal);
         allPossibleDeals.add(fashionDeal1);
@@ -143,9 +146,9 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
         allPossibleDeals.add(fashionDeal4);
         allPossibleDeals.add(fashionDeal5);
 //
-        FoodDeal foodDeal = new FoodDeal("KFC deal", "45HHs6hgshHG", new Date(2020,2,29),240,100,R.drawable.nike);
-        FoodDeal foodDeal1 = new FoodDeal("McDonalds offer", "45HHs6hgshHG", new Date(2020,2,29),430,200,R.drawable.nike);
-        FoodDeal foodDeal2 = new FoodDeal("Subway deal", "45HHs6hgshHG", new Date(2020,2,29),1000,5,R.drawable.nike);
+        FoodDeal foodDeal = new FoodDeal("KFC Deal", "45HHs6hgshHG", new Date(2020,2,29),240,100,R.drawable.kfc);
+        FoodDeal foodDeal1 = new FoodDeal("McDonalds Offer", "45HHs6hgshHG", new Date(2020,2,29),430,200,R.drawable.mc);
+        FoodDeal foodDeal2 = new FoodDeal("Burger King Deal", "45HHs6hgshHG", new Date(2020,2,29),1000,5,R.drawable.king);
         allPossibleDeals.add(foodDeal);
         allPossibleDeals.add(foodDeal1);
         allPossibleDeals.add(foodDeal2);
@@ -186,6 +189,7 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
             int integerDifference = Integer.parseInt(calculateDateDifference(deal));
             if(integerDifference < 3){
                 newDeals.add(deal);
+                Log.d("gavno", ""+integerDifference);
             }
         }
         fillRecyclerDealList(featuredDeals, featuredRecyclerView);
@@ -235,10 +239,8 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
         }
     }
 
-    public void onClick2 (View v) {
-        if (v.getId() == R.id.MapButton) {
-            Intent intent = new Intent(HomePage.this, MapActivity.class);
-            startActivity(intent);
-        }
+    public void handleMapPress (View v) {
+        Intent intent = new Intent(HomePage.this, MapActivity.class);
+        startActivity(intent);
     }
 }

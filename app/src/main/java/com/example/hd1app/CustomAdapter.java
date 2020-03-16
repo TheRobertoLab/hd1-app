@@ -18,6 +18,8 @@ import java.util.ArrayList;
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomViewHolder> {
     private Context context;
     private ArrayList<Deal> items;
+    private View.OnClickListener mOnItemClickListener;
+
     public CustomAdapter(Context context, ArrayList<Deal> items) {
         this.context = context;
         this.items = items;
@@ -31,7 +33,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
     public void onBindViewHolder(@NonNull CustomViewHolder holder, int position) {
         holder.itemTitle.setText(items.get(position).getTitle());
         holder.itemImage.setImageResource(items.get(position).getImage());
-
         holder.likeButton.setTag(R.drawable.heart);
         holder.likeButton.setImageResource(R.drawable.heart);
     }
@@ -39,7 +40,12 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
     public int getItemCount() {
         return items.size();
     }
-
+    public Deal getItem(int position){
+        return items.get(position);
+    }
+    public void setOnItemClickListener(View.OnClickListener itemClickListener) {
+        mOnItemClickListener = itemClickListener;
+    }
 
     public class CustomViewHolder extends RecyclerView.ViewHolder {
 
@@ -47,11 +53,15 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
         private ImageView likeButton;
         private ImageView itemImage;
 
+
         public CustomViewHolder(final View view) {
             super(view);
             itemImage = view.findViewById(R.id.item_image);
             itemTitle = view.findViewById(R.id.item_title);
             likeButton = view.findViewById(R.id.like_button);
+
+            itemView.setTag(this);
+            itemView.setOnClickListener(mOnItemClickListener);
 
             likeButton.setOnClickListener(new View.OnClickListener() {
                 @Override

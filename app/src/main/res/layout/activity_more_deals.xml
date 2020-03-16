@@ -89,8 +89,12 @@
                     android:paddingStart="10dp" />
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/cancel_Button"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:onClick="cancelPressed"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:src="@drawable/close"
                     android:layout_gravity="center_vertical"
                     android:layout_marginRight="10dp"
@@ -100,11 +104,12 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/deal_quantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:text="10 deals found"
+                android:text="No deals"
                 android:layout_marginStart="10dp" />
 
             <androidx.recyclerview.widget.RecyclerView
