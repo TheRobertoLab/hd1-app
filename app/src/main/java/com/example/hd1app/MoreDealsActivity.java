@@ -31,6 +31,7 @@ public class MoreDealsActivity extends AppCompatActivity {
     ImageView coverImg;
     ImageView cancelButton;
     EditText searchBar;
+    public static Deal thisItem = null;
     private Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +60,6 @@ public class MoreDealsActivity extends AppCompatActivity {
         public void onClick(View view) {
             RecyclerView.ViewHolder viewHolder = (RecyclerView.ViewHolder) view.getTag();
             int position = viewHolder.getAdapterPosition();
-            Deal thisItem = null;
 
             if (intent.getStringExtra("category_title").equals("Fashion")) {
                 thisItem = fashionDeals.get(position);
@@ -76,7 +76,7 @@ public class MoreDealsActivity extends AppCompatActivity {
             }
             Intent intent = new Intent(MoreDealsActivity.this, DetailsPageActivity.class);
             startActivity(intent);
-            Toast.makeText(MoreDealsActivity.this, "You Clicked: " + thisItem.getTitle(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(MoreDealsActivity.this, "You Clicked: " + thisItem.getTitle(), Toast.LENGTH_SHORT).show();
         }
     };
     @Override
@@ -109,13 +109,13 @@ public class MoreDealsActivity extends AppCompatActivity {
             dealQuantity.setText("We've found "+ foodDeals.size()+" deals for you.");
         } else if (intent.getStringExtra("category_title").equals("Travel")) {
 //            fillRecyclerDealList(foodDeals, recyclerView);
-//            coverImg.setImageResource(R.drawable.coverimg);
+              coverImg.setImageResource(R.drawable.nodeals);
         } else if (intent.getStringExtra("category_title").equals("Entertainment")) {
             //fillRecyclerDealList(foodDeals, recyclerView);
-            //coverImg.setImageResource(R.drawable.coverimg);
+            coverImg.setImageResource(R.drawable.nodeals);
         } else if (intent.getStringExtra("category_title").equals("Education")) {
             //fillRecyclerDealList(foodDeals, recyclerView);
-            //coverImg.setImageResource(R.drawable.coverimg);
+            coverImg.setImageResource(R.drawable.nodeals);
         }
     }
     public static void hideSoftKeyboard (Activity activity, View view) {

@@ -30,7 +30,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/top_text"
+            android:id="@+id/deal_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -48,37 +48,47 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:paddingBottom="10dp">
+
             <ImageView
+                android:id="@+id/deal_image"
                 android:layout_width="wrap_content"
                 android:layout_height="100dp"
-                android:src="@drawable/adidaslogo"/>
+                android:src="@drawable/adidaslogo"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center"/>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="EVERYTHING is reduced for student for 20%"
+                android:text="@string/everything_is_reduced_for_student_for_20"
                 android:textAlignment="center"
                 android:textSize="15dp"
                 android:textStyle="bold"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="8 Westgate, Huddersfield HD1 1NN"
+                android:text="@string/_8_westgate_huddersfield_hd1_1nn"
                 android:textAlignment="center"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1. Make a Route to find a store:"
+                android:text="@string/_1_make_a_route_to_find_a_store"
                 android:layout_marginTop="10dp"
                 android:paddingLeft="10dp"
                 android:textStyle="bold"/>
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="170dp"
-                android:src="@drawable/map"/>
+                android:src="@drawable/map"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="handleMapPress"
+                android:foreground="?android:attr/selectableItemBackground"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="2. Then show the following barcode:"
+                android:text="@string/_2_then_show_the_following_barcode"
                 android:layout_marginTop="10dp"
                 android:paddingLeft="10dp"
                 android:textStyle="bold"/>
@@ -90,7 +100,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="or press the button and use the code online"
+                android:text="@string/or_press_the_button_and_use_the_code_online"
                 android:textAlignment="center"
                 android:layout_marginBottom="10dp"/>
             <Button
@@ -98,7 +108,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/btn_custom"
                 android:layout_marginHorizontal="10dp"
-                android:text="Copy Code and Open Website"
+                android:text="@string/copy_code_and_open_website"
                 android:textAllCaps="false"
                 android:textColor="#ffffff"/>
 

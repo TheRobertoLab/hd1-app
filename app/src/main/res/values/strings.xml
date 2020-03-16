@@ -29,6 +29,12 @@
     <string name="re_type_password">Re-type Password</string>
     <string name="your_name">Title and Name</string>
     <string name="access_token">pk.eyJ1Ijoicm96emE5OCIsImEiOiJjazZjNXAzMzkwb2w0M25tdm9mb2ZicTQ2In0.d6QujO6UUPt6KxleZHCjng</string>
+    <string name="everything_is_reduced_for_student_for_20">EVERYTHING is reduced for student for 20%</string>
+    <string name="_8_westgate_huddersfield_hd1_1nn">8 Westgate, Huddersfield HD1 1NN</string>
+    <string name="_1_make_a_route_to_find_a_store">1. Make a Route to find a store:</string>
+    <string name="_2_then_show_the_following_barcode">2. Then show the following barcode:</string>
+    <string name="or_press_the_button_and_use_the_code_online">or press the button and use the code online</string>
+    <string name="copy_code_and_open_website">Copy Code and Open Website</string>
     >>>>>>> 2ed30ffa884fad47bd6bb29c1a57d54e0ef48b19
     <string-array name="spinner_array">
         <item>Suggestions</item>
